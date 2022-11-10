@@ -4,12 +4,16 @@ const esito = document.getElementById("esito");
 const button = document.getElementById("button");
 const labelScorePlayer = document.getElementById("scorePlayer");
 const labelScorePc = document.getElementById("scorePc");
+const labelMatches = document.getElementById("matches");
 let scorePlayer = 0;
 let scorePc = 0;
+let matches = 0;
 
 button.addEventListener("click",
     function(){
 
+        matches++;
+        labelMatches.innerHTML = matches;
         // Generare un numero casuale da 1 a 6 per il giocatore.
         const numeroGiocatore = Math.floor(Math.random() * 6 + 1);
         // Generare un numero casuale da 1 a 6 per il pc.
@@ -40,6 +44,7 @@ button.addEventListener("click",
             labelScorePc.innerHTML = scorePc;
 
         }
+
 
     }
 )

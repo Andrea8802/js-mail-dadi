@@ -48,14 +48,11 @@ button > i:hover{
     cursor: pointer;
 }
 
-.label-punteggio-player{
-    text-align: left;
+.labels{
     font-weight: bold;
     font-size: 20px;
-}
-
-.label-punteggio-pc{
-    text-align: right;
-    font-weight: bold;
-    font-size: 20px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
