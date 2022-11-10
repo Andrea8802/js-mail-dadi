@@ -2,8 +2,10 @@
 
 const esito = document.getElementById("esito");
 const button = document.getElementById("button");
-const labelScore = document.getElementById("score");
-let score = 0;
+const labelScorePlayer = document.getElementById("scorePlayer");
+const labelScorePc = document.getElementById("scorePc");
+let scorePlayer = 0;
+let scorePc = 0;
 
 button.addEventListener("click",
     function(){
@@ -18,22 +20,24 @@ button.addEventListener("click",
             // Output vincita.
             esito.innerHTML = "Hai Vinto!"
             esito.style.color = "lime";
-            score += 1;
-            labelScore.innerHTML = score;
+            scorePlayer += 1;
+            scorePc -= 1;
+            labelScorePlayer.innerHTML = scorePlayer;
+            labelScorePc.innerHTML = scorePc;
 
         } else if (numeroGiocatore === numeroPc){
             // Output pareggio.
             esito.innerHTML = "Pareggio!"
             esito.style.color = "blue";
-            labelScore.innerHTML = score;
-
 
         } else{
             // Output sconfitta.
             esito.innerHTML = "Hai Perso!"
             esito.style.color = "red";
-            score -= 1;
-            labelScore.innerHTML = score;
+            scorePlayer -= 1;
+            scorePc += 1;
+            labelScorePlayer.innerHTML = scorePlayer;
+            labelScorePc.innerHTML = scorePc;
 
         }
 

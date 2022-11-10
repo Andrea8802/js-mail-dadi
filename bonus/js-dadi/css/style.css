@@ -45,10 +45,17 @@ button > i{
 
 button > i:hover{
     color: black;
+    cursor: pointer;
 }
 
-.label-punteggio{
+.label-punteggio-player{
     text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.label-punteggio-pc{
+    text-align: right;
     font-weight: bold;
     font-size: 20px;
 }
