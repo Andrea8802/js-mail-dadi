@@ -13,24 +13,28 @@ accedi.addEventListener("click",
         esito.innerHTML = "Inserisci il tuo nome e la tua email par accedere!"
         const nomeUtente = document.getElementById("nome");
         const emailUtente = document.getElementById("email");
-        let autorizzato = 0;
+        let autorizzato = false;
         // Verifichiamo se l'email è autorizzata o meno.
         if (emailUtente.value === "" || nomeUtente.value === ""){
             alert("compila i campi per accedere!");
+            
         } else{
             for (let i = 0; i < emailAutorizzate.length; i++){
                 if (emailUtente.value === emailAutorizzate[i]){
-                    // Output dell'esito.
-                    esito.innerHTML = "Benvenuto " + nomeUtente.value + "!";
-                    autorizzato = 1;
+                    
+                    autorizzato = true;
                 }
-            }
-    
-            if (autorizzato != 1){
+            }      
+            
+            if (autorizzato === true){
                 // Output dell'esito.
-                esito.innerHTML = "Mi dispiace " + nomeUtente.value + ", ma la sua email non è autorizzata all'accesso.";
-            }
-    
+                esito.innerHTML = "Benvenuto " + nomeUtente.value + "!";
+
+           } else {
+               // Output dell'esito.
+               esito.innerHTML = "Mi dispiace " + nomeUtente.value + ", ma la sua email non è autorizzata all'accesso.";
+           } 
+
             nomeUtente.value = "";
             emailUtente.value = "";
         }
